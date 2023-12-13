@@ -1,0 +1,369 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Inika', serif;
+    background-color: #fff;
+}
+
+.portada {
+    display: flex;
+    flex-direction: row; /* Esto coloca el sidebar a la derecha y el contenido principal a la izquierda */
+    justify-content: center; /* Esto ya no es necesario si usas el 100% del ancho, pero lo dejo por si acaso */
+    align-items: stretch; /* Esto hará que los hijos se estiren para ocupar el alto del contenedor */
+    height: 100vh;
+    width: 100%;
+    margin: auto;
+    padding-left: 100px; /* Eliminé los 20px para que utilice todo el ancho disponible */
+    box-sizing: border-box;
+}
+
+
+.main-content {
+    width: 80%; /* Ajusta al 50% del ancho de .portada */
+    height: 100%; /* Ajusta al 100% del alto de .portada */
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+    font-size: 20px;
+}
+
+.sidebar {
+    width: 20%; /* Ajusta al 20% del ancho de .portada */
+    height: 100%; /* Ajusta al 100% del alto de .portada */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: flex-start;
+    padding: 20px 0; /* Añade padding arriba y abajo si es necesario */
+}
+
+.centered-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra horizontalmente los elementos de bloque */
+  justify-content: center; /* Centra verticalmente los elementos */
+  height: 100vh; /* Utiliza todo el alto de la pantalla */
+  text-align: center; /* Asegura que el texto dentro de los elementos de bloque también esté centrado */
+}
+
+
+a {
+  text-decoration: none; /* Esto quitará la línea subrayada de todos los enlaces */
+}
+
+.nombre {
+    font-family: 'Inspiration', cursive;
+    color: #ff00ff;
+    font-size: 130px;
+}
+
+.nombre a:link, .nombre a:visited {
+  font-family: 'Inspiration', cursive;
+  color: #ff00ff; /* Este color es magenta */
+  font-size: 100px;
+  text-decoration: none;
+}
+
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes deleting {
+    from { width: 100%; }
+    to { width: 0; }
+  }
+  
+  .subtitulo {
+    font-size: 40px;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    animation: typing 2s steps(40, end) forwards, blink-caret .75s step-end infinite;
+  }
+
+  
+  .typing {
+    animation: typing 2s steps(40, end) forwards, blink-caret .75s step-end infinite;
+  }
+  
+  .deleting {
+    animation: deleting 2s steps(40, end) forwards, blink-caret .75s step-end infinite;
+  }
+  
+
+  .boton-cv {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px; /* Ajusta el padding si es necesario para cambiar la altura y el espacio interior */
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    width: auto; /* Cambia a 'auto' para que el ancho se ajuste al contenido */
+    max-width: 70px; /* O el ancho máximo que prefieras */
+}
+
+
+.sidebar .icono {
+    margin: 60px 0;
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .icono img {
+  width: 110px; /* Tamaño fijo para los íconos */
+  height: auto;
+}
+
+
+.sidebar .icono p {
+    margin-top: 5px;
+    margin-left: 10px; /* Espaciado entre el ícono y el texto */
+}
+
+.sidebar-highlight-about {
+  background-color: #FFCEE2; /* Color para el 'About me' */
+}
+
+.sidebar-highlight-projects {
+  background-color: #D2E6FF; /* Color para 'Projects' */
+}
+
+.sidebar-highlight-contact {
+  background-color: #FFCF6C; /* Color para 'Contact' */
+}
+
+.hidden {
+  display: none;
+}
+
+.projects-container {
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Esto crea 3 columnas */
+  gap: 16px; /* Espacio entre proyectos */
+}
+
+.project-item {
+  width: 100%; /* Esto asegura que el proyecto ocupe todo el espacio de la celda de la cuadrícula */
+  height: 150px; /* Altura de los elementos de la cuadrícula */
+  background-color: #ccc; /* Color de fondo de ejemplo para los elementos del proyecto */
+  /* Puedes añadir estilos adicionales como bordes o sombras según sea necesario */
+}
+
+
+.about-me-photo {
+  border-radius: 50%; /* Esto hará que la imagen sea redonda */
+  width: 300px; /* Esto define un ancho fijo para la imagen */
+  height: 300px; /* Esto define una altura fija para la imagen, igual que el ancho para que sea un círculo */
+  object-fit: cover; /* Esto asegura que la imagen cubra el espacio sin distorsionarse */
+}
+
+.about-me-description{
+  padding-right: 150px;
+}
+.about-me-text {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px; /* Ajusta esto según el ancho deseado para el texto */
+}
+
+.skills-icons {
+  display: flex; /* Alinea horizontalmente los iconos de habilidades técnicas */
+  gap: 10px; /* Añade un pequeño espacio entre los iconos */
+  flex-wrap: wrap; /* Esto permite que los íconos se envuelvan en la siguiente línea si no hay espacio suficiente */
+}
+
+.skills-icons img {
+  width: 48px; /* Ancho fijo para los íconos */
+  height: 48px; /* Altura fija para los íconos */
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* ajusta el minmax para tus necesidades */
+  grid-gap: 10px; /* Espacio entre las tarjetas */
+  padding: 10px; /* Espaciado alrededor del contenido de la grilla */
+}
+
+.project-item {
+  background: #f9f9f9; /* Color de fondo de cada proyecto */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  overflow: hidden; /* Asegura que todo el contenido se quede dentro de los bordes redondeados */
+  display: flex; /* Añade flexibilidad para organizar la imagen y el contenido */
+  flex-direction: column; /* Organiza los hijos en columna */
+  cursor: pointer; /* Cambia el cursor al pasar sobre la tarjeta */
+}
+
+.card-container {
+  perspective: 1000px;
+  width: 300px; /* Ancho fijo de la tarjeta */
+  height: 350px; /* Alto fijo de la tarjeta */
+  margin: 0 auto; /* Centra la tarjeta horizontalmente si es necesario */
+}
+
+.card-flip {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card-flip.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-front {
+  background-color: white;
+}
+
+.card-back {
+  background-color: #f8f8f8;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 50%; /* Ajusta al 50% del alto de la tarjeta */
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.card-title,
+.card-text,
+.card-date {
+  text-align: center;
+}
+
+.card-body {
+  padding: 15px;
+  display: flex;
+  flex-direction: column; /* Cambia la dirección de los elementos hijos a columna */
+  justify-content: center;
+  align-items: center;
+}
+
+.card-actions {
+  display: flex; /* Esto permite colocar los elementos hijos uno al lado del otro */
+  justify-content: space-around; /* Esto espaciará los elementos uniformemente */
+  width: 100%; /* Esto asegura que el contenedor de acciones use todo el ancho disponible */
+  margin-top: 10px; /* Esto agrega un poco de espacio en la parte superior del contenedor de acciones */
+}
+
+.about-actions {
+  display: flex;
+  justify-content: flex-start; /* Cambia a flex-start para alinear al principio */
+  align-items: center; /* Asegúrate de que los elementos estén alineados verticalmente */
+  gap: 10px; /* Ajusta este valor para controlar el espacio entre los elementos */
+  width: 100%;
+  margin-top: 10px;
+}
+
+
+.view-project-btn,
+.github-icon {
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin: 0 5px; /* Esto agrega un pequeño margen a los lados de cada botón para separarlos */
+  display: inline-flex; /* Esto permite que los enlaces se comporten como botones flexibles */
+  align-items: center; /* Esto centra el contenido de los botones verticalmente */
+}
+
+.view-project-btn {
+  background-color: #6200ea; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+}
+
+.github-icon img {
+  width: 24px; /* Tamaño del icono de GitHub */
+  height: auto; /* Esto mantiene la proporción del icono */
+  margin-right: 5px; /* Esto añade un pequeño espacio entre el icono y el texto si decides añadirlo */
+}
+
+#contact-icons.hidden {
+  display: none;
+}
+
+/* Cuando se quita la clase hidden, se mostrará con flex */
+#contact-icons {
+  justify-content: center; /* Centra los botones en el contenedor */
+  align-items: center; /* Alinea los botones verticalmente en el centro */
+  gap: 10px; /* Espacio entre cada botón */
+display: flex;}
+
+#contact-icons .social-btn {
+  cursor: pointer;
+  display: flex; /* Asegúrate de que este también sea flex */
+  justify-content: center;
+  align-items: center;
+  width: 100px; /* Ancho inicial */
+  height: 100px; /* Altura inicial */
+  overflow: hidden; /* Oculta el contenido desbordado */
+  position: relative; /* Para el posicionamiento absoluto de los elementos secundarios */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background: #f7e6c5;
+}
+
+#contact-icons .social-btn img, 
+#contact-icons .social-btn svg {
+  width: 90px; /* Tamaño del icono */
+  height: 90px; /* Tamaño del icono */
+}
+
+#contact-icons .social-btn:hover {
+  width: 150px; /* Ancho al hacer hover */
+}
+
+#contact-icons .social-btn span {
+  display: none; /* Oculta el texto inicialmente */
+}
+
+#contact-icons .social-btn:hover span {
+  display: block; /* Muestra el texto al hacer hover */
+  position: absolute;
+  left: 60px; /* Ajusta según sea necesario para colocar el texto al lado del ícono */
+}
+
+
+
+
+
